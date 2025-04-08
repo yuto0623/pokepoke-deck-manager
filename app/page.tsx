@@ -106,19 +106,30 @@ export default function Home() {
           {loading ? (
             <div>読み込み中...</div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {filteredCards.map((card) => (
                 <Card
                   key={card.id}
-                  className="border rounded-lg p-4 transition-shadow cursor-pointer"
+                  className="cursor-pointer p-0 w-50"
                   onClick={() => addCardToDeck(card)}
                 >
-                  <h2 className="text-xl font-semibold mb-2">{card.name}</h2>
+                  <CardContent className="p-0">
+                    {/* <h2 className="text-xl font-semibold mb-2">{card.name}</h2>
                   <div className="text-gray-600">
-                    <p>タイプ: {card.type}</p>
-                    <p>HP: {card.hp}</p>
-                    <p>ステージ: {card.stage}</p>
-                  </div>
+                  <p>タイプ: {card.type}</p>
+                  <p>HP: {card.hp}</p>
+                  <p>ステージ: {card.stage}</p>
+                  </div> */}
+                    {card.imageUrl && (
+                      <Image
+                        src={card.imageUrl}
+                        alt={card.name}
+                        width={315}
+                        height={440}
+                        className="brightness-0"
+                      />
+                    )}
+                  </CardContent>
                 </Card>
               ))}
             </div>

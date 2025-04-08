@@ -17,7 +17,7 @@
       ],
       "weakness": "炎",
       "retreat": 1,
-      "imageUrl": "/images/cards/A2b-1.png"
+      "imageUrl": "/imgs/cards/A2b-1.png"
     },
     {
       "id": "A2b-2",
@@ -36,7 +36,7 @@
       ],
       "weakness": "炎",
       "retreat": 1,
-      "imageUrl": "/images/cards/A2b-2.png"
+      "imageUrl": "/imgs/cards/A2b-2.png"
     },
     {
       "id": "A2b-3",
@@ -55,7 +55,7 @@
       ],
       "weakness": "炎",
       "retreat": 1,
-      "imageUrl": "/images/cards/A2b-3.png"
+      "imageUrl": "/imgs/cards/A2b-3.png"
     },
     {
       "id": "sv1-t01",
