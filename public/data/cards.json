@@ -58,6 +58,25 @@
       "imageUrl": "/imgs/cards/A2b-3.png"
     },
     {
+      "id": "A2b-4",
+      "name": "カイロス",
+      "type": "草",
+      "hp": 90,
+      "stage": "0",
+      "ex": false,
+      "attacks": [
+        {
+          "name": "ギロチンラッシュ",
+          "cost": ["草","無色","無色"],
+          "damage": 50,
+          "effect": "ウラが出るまでコインを投げ、オモテの数×40ダメージ追加。"
+        }
+      ],
+      "weakness": "炎",
+      "retreat": 2,
+      "imageUrl": "/imgs/cards/A2b-4.png"
+    },
+    {
       "id": "sv1-t01",
       "name": "博士の研究",
       "type": "トレーナーズ",
