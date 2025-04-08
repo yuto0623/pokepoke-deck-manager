@@ -41,8 +41,8 @@ export default function Home() {
             </h2>
 
             <ScrollArea className="">
-              <div className="w-fit mx-auto overflow-y-hidden">
-                <div className="grid grid-cols-[repeat(10,70px)] 2xl:grid-cols-20 gap-2 w-fit">
+              <div className="w-fit mx-auto 2xl:overflow-y-hidden">
+                <div className="grid grid-cols-[repeat(10,70px)] grid-rows-2 2xl:grid-rows-1 2xl:grid-cols-20 gap-2 w-fit">
                   {deck.map((card) => (
                     <div
                       key={card.id}
