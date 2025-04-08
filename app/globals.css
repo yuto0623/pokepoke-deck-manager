@@ -10,17 +10,17 @@ body {
 @layer components {
   .neumorphism {
     @apply bg-[#e1e0e7] transition-all duration-300;
-    box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+    box-shadow: 2.5px 2.5px 5px #bebebe, -2.5px -2.5px 5px #ffffff;
   }
 
   .neumorphism-pressed {
     @apply bg-[#e1e0e7] transition-all duration-300;
-    box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+    box-shadow: inset 2.5px 2.5px 5px #bebebe, inset -2.5px -2.5px 5px #ffffff;
   }
 
   .hover\:neumorphism-pressed:hover {
     @apply bg-[#e1e0e7] transition-all duration-300;
-    box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+    box-shadow: inset 2.5px 2.5px 5px #bebebe, inset -2.5px -2.5px 5px #ffffff;
   }
 }
 
