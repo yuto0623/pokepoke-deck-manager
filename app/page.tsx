@@ -50,11 +50,11 @@ export default function Home() {
                       onClick={() => removeCardFromDeck(card.id)}
                     >
                       <Image
-                        src="/imgs/cards/original.png"
+                        src={card.imageUrl}
                         alt={""}
                         width={315}
                         height={440}
-                        className="brightness-0"
+                        // className="brightness-0"
                       />
                       <p className="absolute top-5 left-5 text-white">
                         {card.name + card.count}
@@ -126,7 +126,7 @@ export default function Home() {
                         alt={card.name}
                         width={315}
                         height={440}
-                        className="brightness-0"
+                        // className="brightness-0"
                       />
                     )}
                   </CardContent>
