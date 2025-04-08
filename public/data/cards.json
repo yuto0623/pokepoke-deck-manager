@@ -1,112 +1,61 @@
 {
   "cards": [
     {
-      "id": "sv1-001",
-      "name": "コライドン",
-      "type": "はがね",
-      "hp": 130,
-      "stage": "基本",
+      "id": "A2b-1",
+      "name": "ビードル",
+      "type": "草",
+      "hp": 50,
+      "stage": "0",
+      "ex": false,
       "attacks": [
         {
-          "name": "エネルギーチャージ",
-          "cost": ["無色"],
+          "name": "ふえる",
+          "cost": ["草"],
           "damage": 0,
-          "effect": "自分のデッキからエネルギーカードを2枚選び、自分のポケモンに好きなように付ける。その後、デッキをシャッフルする。"
+          "effect": "自分の山札から「ビードル」をランダムに1枚、ベンチに出す。"
         }
       ],
       "weakness": "炎",
-      "retreat": 2,
-      "imageUrl": "/images/cards/sv1-001.jpg"
+      "retreat": 1,
+      "imageUrl": "/images/cards/A2b-1.png"
     },
     {
-      "id": "sv1-002",
-      "name": "ピカチュウ",
-      "type": "雷",
-      "hp": 70,
-      "stage": "基本",
+      "id": "A2b-2",
+      "name": "コクーン",
+      "type": "草",
+      "hp": 80,
+      "stage": "1",
+      "ex": false,
       "attacks": [
         {
-          "name": "でんきショック",
-          "cost": ["雷"],
+          "name": "いとをはく",
+          "cost": ["草"],
           "damage": 20,
-          "effect": null
+          "effect": "コインを1回投げオモテなら、相手のバトルポケモンをマヒにする。"
         }
       ],
-      "weakness": "闘",
+      "weakness": "炎",
       "retreat": 1,
-      "imageUrl": "/images/cards/sv1-002.jpg"
+      "imageUrl": "/images/cards/A2b-2.png"
     },
     {
-      "id": "sv1-003",
-      "name": "リザードン",
-      "type": "炎",
+      "id": "A2b-3",
+      "name": "スピアーex",
+      "type": "草",
       "hp": 170,
       "stage": "2",
+      "ex": true,
       "attacks": [
         {
-          "name": "かえんほうしゃ",
-          "cost": ["炎", "炎", "無色"],
-          "damage": 180,
-          "effect": "このポケモンについているエネルギーを1個トラッシュする。"
+          "name": "クラッシュスピア",
+          "cost": ["草","草"],
+          "damage": 80,
+          "effect": "相手のバトルポケモンからエネルギーをランダムに1個トラッシュ。"
         }
       ],
-      "weakness": "水",
-      "retreat": 3,
-      "imageUrl": "/images/cards/sv1-003.jpg"
-    },
-    {
-      "id": "sv1-004",
-      "name": "ヒトカゲ",
-      "type": "炎",
-      "hp": 70,
-      "stage": "基本",
-      "attacks": [
-        {
-          "name": "ひっかく",
-          "cost": ["無色"],
-          "damage": 10,
-          "effect": null
-        }
-      ],
-      "weakness": "水",
+      "weakness": "炎",
       "retreat": 1,
-      "imageUrl": "/images/cards/sv1-004.jpg"
-    },
-    {
-      "id": "sv1-005",
-      "name": "リザード",
-      "type": "炎",
-      "hp": 110,
-      "stage": "1",
-      "attacks": [
-        {
-          "name": "かえんぐるま",
-          "cost": ["炎", "無色"],
-          "damage": 60,
-          "effect": null
-        }
-      ],
-      "weakness": "水",
-      "retreat": 2,
-      "imageUrl": "/images/cards/sv1-005.jpg"
-    },
-    {
-      "id": "sv1-006",
-      "name": "ミュウツー",
-      "type": "超",
-      "hp": 180,
-      "stage": "基本",
-      "attacks": [
-        {
-          "name": "サイコブレイク",
-          "cost": ["超", "超", "無色"],
-          "damage": 150,
-          "effect": "相手のバトルポケモンについているエネルギーの数×30ダメージを追加する。"
-        }
-      ],
-      "weakness": "超",
-      "retreat": 2,
-      "imageUrl": "/images/cards/sv1-006.jpg"
+      "imageUrl": "/images/cards/A2b-3.png"
     },
     {
       "id": "sv1-t01",
