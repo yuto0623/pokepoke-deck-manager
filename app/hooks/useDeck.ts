@@ -30,15 +30,15 @@ export function useDeck() {
   const totalCards = deck.reduce((sum, card) => sum + card.count, 0);
 
   const addCardToDeck = (card: Card) => {
-    if (totalCards >= 60) {
-      alert("デッキは60枚までです");
+    if (totalCards >= 20) {
+      alert("デッキは20枚までです");
       return;
     }
 
     const existingCard = deck.find((c) => c.id === card.id);
     if (existingCard) {
-      if (existingCard.count >= 4) {
-        alert("同じカードは4枚までしか入れられません");
+      if (existingCard.count >= 2) {
+        alert("同じカードは2枚までしか入れられません");
         return;
       }
       setDeck(
@@ -67,8 +67,8 @@ export function useDeck() {
       alert("デッキ名を入力してください");
       return false;
     }
-    if (totalCards !== 60) {
-      alert("デッキは60枚である必要があります");
+    if (totalCards !== 20) {
+      alert("デッキは20枚である必要があります");
       return false;
     }
 
