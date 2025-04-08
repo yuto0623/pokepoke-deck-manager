@@ -1,130 +1,34 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
-
-interface Card {
-  id: string;
-  name: string;
-  type: string;
-  hp: number;
-  stage: string;
-  attacks: {
-    name: string;
-    cost: string[];
-    damage: number;
-    effect: string;
-  }[];
-  weakness: string;
-  resistance: string;
-  retreat: number;
-  imageUrl: string;
-  regulation: string;
-}
-
-interface DeckCard extends Card {
-  count: number;
-}
+import { useCards } from "./hooks/useCards";
+import { useDeck } from "./hooks/useDeck";
 
 export default function Home() {
-  const [cards, setCards] = useState<Card[]>([]);
+  const { cards, loading, error } = useCards();
+  const {
+    deck,
+    deckName,
+    setDeckName,
+    totalCards,
+    addCardToDeck,
+    removeCardFromDeck,
+    saveDeck,
+  } = useDeck();
   const [searchTerm, setSearchTerm] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [deck, setDeck] = useState<DeckCard[]>([]);
-  const [deckName, setDeckName] = useState("");
-
-  useEffect(() => {
-    const fetchCards = async () => {
-      try {
-        const response = await fetch("/data/cards.json");
-        const data = await response.json();
-        setCards(data.cards);
-      } catch (error) {
-        console.error("カードデータの読み込みに失敗しました:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCards();
-
-    // 保存されたデッキを読み込む
-    const savedDecks = localStorage.getItem("decks");
-    if (savedDecks) {
-      const lastDeck = JSON.parse(savedDecks)[0];
-      if (lastDeck) {
-        setDeck(lastDeck.cards);
-        setDeckName(lastDeck.name);
-      }
-    }
-  }, []);
 
   const filteredCards = cards.filter((card) =>
     card.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const totalCards = deck.reduce((sum, card) => sum + card.count, 0);
-
-  const addCardToDeck = (card: Card) => {
-    if (totalCards >= 60) {
-      alert("デッキは60枚までです");
-      return;
-    }
-
-    const existingCard = deck.find((c) => c.id === card.id);
-    if (existingCard) {
-      if (existingCard.count >= 4) {
-        alert("同じカードは4枚までしか入れられません");
-        return;
-      }
-      setDeck(
-        deck.map((c) => (c.id === card.id ? { ...c, count: c.count + 1 } : c))
-      );
-    } else {
-      setDeck([...deck, { ...card, count: 1 }]);
-    }
-  };
-
-  const removeCardFromDeck = (cardId: string) => {
-    setDeck(
-      deck
-        .map((card) => {
-          if (card.id === cardId) {
-            return { ...card, count: card.count - 1 };
-          }
-          return card;
-        })
-        .filter((card) => card.count > 0)
-    );
-  };
-
-  const saveDeck = () => {
-    if (!deckName) {
-      alert("デッキ名を入力してください");
-      return;
-    }
-    if (totalCards !== 60) {
-      alert("デッキは60枚である必要があります");
-      return;
-    }
-
-    const savedDecks = localStorage.getItem("decks");
-    const decks = savedDecks ? JSON.parse(savedDecks) : [];
-
-    const newDeck = {
-      name: deckName,
-      cards: deck,
-      createdAt: new Date().toISOString(),
-    };
-
-    decks.unshift(newDeck); // 新しいデッキを先頭に追加
-    localStorage.setItem("decks", JSON.stringify(decks.slice(0, 10))); // 最新10件まで保存
-    alert("デッキを保存しました");
-  };
+  if (error) {
+    return <div className="text-red-500">エラー: {error}</div>;
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">ポケポケ デッキマネージャー</h1>
+      <h1 className="text-3xl font-bold mb-8">ポケカ デッキビルダー</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* 左側：カード検索エリア */}
@@ -199,7 +103,7 @@ export default function Home() {
 
           <button
             onClick={saveDeck}
-            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors"
+            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={totalCards !== 60 || !deckName}
           >
             デッキを保存
