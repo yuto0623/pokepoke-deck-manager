@@ -40,8 +40,8 @@ export default function Home() {
               デッキ（{totalCards}/20枚）
             </h2>
 
-            <ScrollArea>
-              <div className="w-fit mx-auto">
+            <ScrollArea className="">
+              <div className="w-fit mx-auto overflow-y-hidden">
                 <div className="grid grid-cols-[repeat(10,70px)] 2xl:grid-cols-20 gap-2 w-fit">
                   {deck.map((card) => (
                     <div
@@ -66,16 +66,8 @@ export default function Home() {
                     .map((_, index) => (
                       <div
                         key={`empty-${index}`}
-                        className="neumorphism relative"
-                      >
-                        <Image
-                          src="/imgs/cards/original.png"
-                          alt="Empty slot"
-                          width={315}
-                          height={440}
-                          className="brightness-0 opacity-30"
-                        />
-                      </div>
+                        className="neumorphism relative bg-gray-400 rounded-xs"
+                      />
                     ))}
                 </div>
               </div>
