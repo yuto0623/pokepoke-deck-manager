@@ -34,32 +34,50 @@ export default function Home() {
     <div className="container mx-auto px-4 py-8">
       <div className="grid gap-8">
         {/* 上側：デッキエリア */}
-        <Card className="sticky top-6 z-10">
+        <Card className="sticky top-6 z-10 overflow-auto">
           <CardContent>
             <h2 className="text-xl font-bold mb-4">
               デッキ（{totalCards}/20枚）
             </h2>
 
-            <ScrollArea className="">
-              <div className="flex">
-                {deck.map((card) => (
-                  <div
-                    key={card.id}
-                    className="w-20 neumorphism relative"
-                    onClick={() => removeCardFromDeck(card.id)}
-                  >
-                    <Image
-                      src="/imgs/cards/original.png"
-                      alt={""}
-                      width={315}
-                      height={440}
-                      className="brightness-0"
-                    />
-                    <p className="absolute top-5 left-5 text-white">
-                      {card.name + card.count}
-                    </p>
-                  </div>
-                ))}
+            <ScrollArea>
+              <div className="w-fit mx-auto">
+                <div className="grid grid-cols-[repeat(10,70px)] 2xl:grid-cols-20 gap-2 w-fit">
+                  {deck.map((card) => (
+                    <div
+                      key={card.id}
+                      className="neumorphism relative"
+                      onClick={() => removeCardFromDeck(card.id)}
+                    >
+                      <Image
+                        src="/imgs/cards/original.png"
+                        alt={""}
+                        width={315}
+                        height={440}
+                        className="brightness-0"
+                      />
+                      <p className="absolute top-5 left-5 text-white">
+                        {card.name + card.count}
+                      </p>
+                    </div>
+                  ))}
+                  {Array(20 - deck.length)
+                    .fill(0)
+                    .map((_, index) => (
+                      <div
+                        key={`empty-${index}`}
+                        className="neumorphism relative"
+                      >
+                        <Image
+                          src="/imgs/cards/original.png"
+                          alt="Empty slot"
+                          width={315}
+                          height={440}
+                          className="brightness-0 opacity-30"
+                        />
+                      </div>
+                    ))}
+                </div>
               </div>
               <ScrollBar orientation="horizontal" />
             </ScrollArea>
