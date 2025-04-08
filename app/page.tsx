@@ -95,7 +95,7 @@ export default function Home() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {filteredCards.map((card) => (
-                <div
+                <Card
                   key={card.id}
                   className="border rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer"
                   onClick={() => addCardToDeck(card)}
@@ -106,7 +106,7 @@ export default function Home() {
                     <p>HP: {card.hp}</p>
                     <p>ステージ: {card.stage}</p>
                   </div>
-                </div>
+                </Card>
               ))}
             </div>
           )}

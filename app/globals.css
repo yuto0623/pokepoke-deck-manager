@@ -10,7 +10,7 @@ body {
 @layer components {
   .neumorphism {
     @apply bg-[#e1e0e7];
-    box-shadow: 20px 20px 40px #bebebe, -20px -20px 40px #ffffff;
+    box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
   }
 
   .neumorphism-pressed-sm {
