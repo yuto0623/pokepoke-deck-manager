@@ -32,7 +32,7 @@ export default function Home() {
     <div className="container mx-auto px-4 py-8">
       <div className="grid gap-8">
         {/* 上側：デッキエリア */}
-        <Card className="sticky top-0 z-10">
+        <Card className="sticky top-6 z-10">
           <CardContent>
             <div className="mb-4">
               <Input
