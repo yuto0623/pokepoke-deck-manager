@@ -78,7 +78,7 @@ export default function Home() {
           </div>
 
           <h2 className="text-xl font-bold mb-4">
-            デッキ（{totalCards}/60枚）
+            デッキ（{totalCards}/20枚）
           </h2>
 
           <div className="space-y-2 mb-4">
