@@ -15,10 +15,8 @@
         }
       ],
       "weakness": "炎",
-      "resistance": "草",
       "retreat": 2,
-      "imageUrl": "/images/cards/sv1-001.jpg",
-      "regulation": "E"
+      "imageUrl": "/images/cards/sv1-001.jpg"
     },
     {
       "id": "sv1-002",
@@ -35,10 +33,8 @@
         }
       ],
       "weakness": "闘",
-      "resistance": null,
       "retreat": 1,
-      "imageUrl": "/images/cards/sv1-002.jpg",
-      "regulation": "E"
+      "imageUrl": "/images/cards/sv1-002.jpg"
     },
     {
       "id": "sv1-003",
@@ -55,10 +51,8 @@
         }
       ],
       "weakness": "水",
-      "resistance": null,
       "retreat": 3,
-      "imageUrl": "/images/cards/sv1-003.jpg",
-      "regulation": "E"
+      "imageUrl": "/images/cards/sv1-003.jpg"
     },
     {
       "id": "sv1-004",
@@ -75,10 +69,8 @@
         }
       ],
       "weakness": "水",
-      "resistance": null,
       "retreat": 1,
-      "imageUrl": "/images/cards/sv1-004.jpg",
-      "regulation": "E"
+      "imageUrl": "/images/cards/sv1-004.jpg"
     },
     {
       "id": "sv1-005",
@@ -95,10 +87,8 @@
         }
       ],
       "weakness": "水",
-      "resistance": null,
       "retreat": 2,
-      "imageUrl": "/images/cards/sv1-005.jpg",
-      "regulation": "E"
+      "imageUrl": "/images/cards/sv1-005.jpg"
     },
     {
       "id": "sv1-006",
@@ -115,70 +105,32 @@
         }
       ],
       "weakness": "超",
-      "resistance": null,
       "retreat": 2,
-      "imageUrl": "/images/cards/sv1-006.jpg",
-      "regulation": "E"
+      "imageUrl": "/images/cards/sv1-006.jpg"
     },
     {
       "id": "sv1-t01",
       "name": "博士の研究",
       "type": "トレーナーズ",
       "category": "サポート",
-      "effect": "自分の手札をすべて捨て、山札から6枚引く。",
-      "regulation": "E"
+      "effect": "自分の手札をすべて捨て、山札から6枚引く。"
     },
     {
       "id": "sv1-t02",
       "name": "ボスの指令",
       "type": "トレーナーズ",
       "category": "サポート",
-      "effect": "相手のベンチポケモンを1匹選び、バトルポケモンと入れ替える。",
-      "regulation": "E"
+      "effect": "相手のベンチポケモンを1匹選び、バトルポケモンと入れ替える。"
     },
     {
       "id": "sv1-t03",
       "name": "ポケモンいれかえ",
       "type": "トレーナーズ",
       "category": "グッズ",
-      "effect": "自分のバトルポケモンを、ベンチポケモン1匹と入れ替える。",
-      "regulation": "E"
-    },
-    {
-      "id": "sv1-e01",
-      "name": "基本炎エネルギー",
-      "type": "エネルギー",
-      "category": "基本",
-      "effect": null,
-      "regulation": "E"
-    },
-    {
-      "id": "sv1-e02",
-      "name": "基本水エネルギー",
-      "type": "エネルギー",
-      "category": "基本",
-      "effect": null,
-      "regulation": "E"
-    },
-    {
-      "id": "sv1-e03",
-      "name": "基本雷エネルギー",
-      "type": "エネルギー",
-      "category": "基本",
-      "effect": null,
-      "regulation": "E"
-    },
-    {
-      "id": "sv1-e04",
-      "name": "基本超エネルギー",
-      "type": "エネルギー",
-      "category": "基本",
-      "effect": null,
-      "regulation": "E"
+      "effect": "自分のバトルポケモンを、ベンチポケモン1匹と入れ替える。"
     }
   ],
   "metadata": {
-    "totalCards": 13,
     "lastUpdated": "2025-04-08",
     "version": "1.0.0"
   }

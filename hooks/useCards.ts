@@ -13,7 +13,6 @@ export interface Card {
     effect: string;
   }[];
   weakness: string;
-  resistance: string;
   retreat: number;
   imageUrl: string;
   regulation: string;
@@ -21,6 +20,7 @@ export interface Card {
 
 export function useCards() {
   const [cards, setCards] = useState<Card[]>([]);
+  const [totalCards, setTotalCards] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -33,6 +33,7 @@ export function useCards() {
         }
         const data = await response.json();
         setCards(data.cards);
+        setTotalCards(data.cards.length);
       } catch (err) {
         console.error("カードデータの読み込みに失敗しました:", err);
         setError(err instanceof Error ? err.message : "不明なエラーが発生しました");
@@ -44,5 +45,5 @@ export function useCards() {
     fetchCards();
   }, []);
 
-  return { cards, loading, error };
+  return { cards, totalCards, loading, error };
 }
