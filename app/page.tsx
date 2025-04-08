@@ -112,11 +112,11 @@ export default function Home() {
           {loading ? (
             <div>読み込み中...</div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 min-[300px]:grid-cols-3 min-[500px]:grid-cols-4 min-[900px]:grid-cols-6 gap-4">
               {filteredCards.map((card) => (
                 <Card
                   key={card.id}
-                  className="cursor-pointer p-0 w-50"
+                  className="cursor-pointer p-0 w-full"
                   onClick={() => addCardToDeck(card)}
                 >
                   <CardContent className="p-0">
