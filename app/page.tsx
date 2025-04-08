@@ -48,11 +48,11 @@ export default function Home() {
               デッキ（{totalCards}/20枚）
             </h2>
 
-            <div className="flex flex-col flex-wrap gap-4 h-40 overflow-x-scroll">
+            <div className="grid grid-rows-2 grid-cols-10 gap-4">
               {deck.map((card) => (
                 <div
                   key={card.id}
-                  className="h-[40%] flex justify-between items-center bg-white p-3 rounded-lg shadow-sm"
+                  className="w-20 flex justify-between items-center bg-white p-3 rounded-lg shadow-sm"
                 >
                   <div>
                     <span className="font-medium">{card.name}</span>
