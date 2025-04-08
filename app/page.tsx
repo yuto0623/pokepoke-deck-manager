@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useCards } from "../hooks/useCards";
 import { useDeck } from "../hooks/useDeck";
+import { Card, CardAction, CardContent } from "@/components/ui/card";
 
 export default function Home() {
   const { cards, loading, error } = useCards();
@@ -30,49 +31,53 @@ export default function Home() {
     <div className="container mx-auto px-4 py-8">
       <div className="">
         {/* 上側：デッキエリア */}
-        <div className="bg-gray-50 p-4 rounded-lg sticky top-0 z-10">
-          <div className="mb-4">
-            <input
-              type="text"
-              placeholder="デッキ名を入力..."
-              value={deckName}
-              onChange={(e) => setDeckName(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-            />
-          </div>
+        <Card className="sticky top-0 z-10">
+          <CardContent>
+            <div className="mb-4">
+              <input
+                type="text"
+                placeholder="デッキ名を入力..."
+                value={deckName}
+                onChange={(e) => setDeckName(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+              />
+            </div>
 
-          <h2 className="text-xl font-bold mb-4">
-            デッキ（{totalCards}/20枚）
-          </h2>
+            <h2 className="text-xl font-bold mb-4">
+              デッキ（{totalCards}/20枚）
+            </h2>
 
-          <div className="flex flex-col flex-wrap gap-4 h-40 overflow-x-scroll">
-            {deck.map((card) => (
-              <div
-                key={card.id}
-                className="h-[40%] flex justify-between items-center bg-white p-3 rounded-lg shadow-sm"
-              >
-                <div>
-                  <span className="font-medium">{card.name}</span>
-                  <span className="text-gray-500 ml-2">×{card.count}</span>
-                </div>
-                <button
-                  onClick={() => removeCardFromDeck(card.id)}
-                  className="text-red-500 hover:text-red-700"
+            <div className="flex flex-col flex-wrap gap-4 h-40 overflow-x-scroll">
+              {deck.map((card) => (
+                <div
+                  key={card.id}
+                  className="h-[40%] flex justify-between items-center bg-white p-3 rounded-lg shadow-sm"
                 >
-                  削除
-                </button>
-              </div>
-            ))}
-          </div>
+                  <div>
+                    <span className="font-medium">{card.name}</span>
+                    <span className="text-gray-500 ml-2">×{card.count}</span>
+                  </div>
+                  <button
+                    onClick={() => removeCardFromDeck(card.id)}
+                    className="text-red-500 hover:text-red-700"
+                  >
+                    削除
+                  </button>
+                </div>
+              ))}
+            </div>
 
-          <button
-            onClick={saveDeck}
-            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled={totalCards !== 20 || !deckName}
-          >
-            デッキを保存
-          </button>
-        </div>
+            <CardAction>
+              <button
+                onClick={saveDeck}
+                className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={totalCards !== 20 || !deckName}
+              >
+                デッキを保存
+              </button>
+            </CardAction>
+          </CardContent>
+        </Card>
 
         {/* 下側：カード検索エリア */}
         <div className="lg:col-span-2">
