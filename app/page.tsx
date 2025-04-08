@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useCards } from "./hooks/useCards";
-import { useDeck } from "./hooks/useDeck";
+import { useCards } from "../hooks/useCards";
+import { useDeck } from "../hooks/useDeck";
 
 export default function Home() {
   const { cards, loading, error } = useCards();
