@@ -35,40 +35,38 @@ export default function Home() {
         {/* 上側：デッキエリア */}
         <Card className="sticky top-6 z-10">
           <CardContent>
-            <div className="mb-4">
+            <h2 className="text-xl font-bold mb-4">
+              デッキ（{totalCards}/20枚）
+            </h2>
+
+            <div className="flex overflow-x-scroll">
+              {deck.map((card) => (
+                <div
+                  key={card.id}
+                  className="w-20 neumorphism relative"
+                  onClick={() => removeCardFromDeck(card.id)}
+                >
+                  <Image
+                    src={"/imgs/cards/original.png"}
+                    alt={""}
+                    width={315}
+                    height={440}
+                    className="brightness-0"
+                  />
+                  <p className="absolute top-5 left-5 text-white">
+                    {card.name + card.count}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <CardAction className="w-full flex justify-center gap-6 mt-5">
               <Input
                 type="text"
                 placeholder="デッキ名を入力..."
                 value={deckName}
                 onChange={(e) => setDeckName(e.target.value)}
               />
-            </div>
-
-            <h2 className="text-xl font-bold mb-4">
-              デッキ（{totalCards}/20枚）
-            </h2>
-
-            <div className="grid grid-rows-2 grid-cols-10 gap-4">
-              {deck.map((card) => (
-                <div
-                  key={card.id}
-                  className="w-20 flex justify-between items-center bg-white p-3 rounded-lg shadow-sm"
-                >
-                  <div>
-                    <span className="font-medium">{card.name}</span>
-                    <span className="text-gray-500 ml-2">×{card.count}</span>
-                  </div>
-                  <button
-                    onClick={() => removeCardFromDeck(card.id)}
-                    className="text-red-500 hover:text-red-700"
-                  >
-                    削除
-                  </button>
-                </div>
-              ))}
-            </div>
-
-            <CardAction className="w-full flex justify-center mt-5">
               <Button
                 onClick={saveDeck}
                 disabled={totalCards !== 20 || !deckName}
