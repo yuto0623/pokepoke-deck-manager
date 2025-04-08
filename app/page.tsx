@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useCards } from "../hooks/useCards";
 import { useDeck } from "../hooks/useDeck";
 import { Card, CardAction, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
 export default function Home() {
   const { cards, loading, error } = useCards();
@@ -29,17 +30,16 @@ export default function Home() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="">
+      <div className="grid gap-8">
         {/* 上側：デッキエリア */}
         <Card className="sticky top-0 z-10">
           <CardContent>
             <div className="mb-4">
-              <input
+              <Input
                 type="text"
                 placeholder="デッキ名を入力..."
                 value={deckName}
                 onChange={(e) => setDeckName(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
               />
             </div>
 
@@ -80,14 +80,13 @@ export default function Home() {
         </Card>
 
         {/* 下側：カード検索エリア */}
-        <div className="lg:col-span-2">
+        <div className="">
           <div className="mb-6">
-            <input
+            <Input
               type="text"
               placeholder="カード名で検索..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
             />
           </div>
 

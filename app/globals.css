@@ -12,6 +12,12 @@ body {
     @apply bg-[#e1e0e7];
     box-shadow: 20px 20px 40px #bebebe, -20px -20px 40px #ffffff;
   }
+
+  .neumorphism-pressed-sm {
+    @apply bg-[#e1e0e7];
+    box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+  }
+
   .neumorphism-pressed {
     @apply bg-[#e1e0e7];
     box-shadow: inset 20px 20px 40px #bebebe, inset -20px -20px 40px #ffffff;
