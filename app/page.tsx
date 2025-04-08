@@ -41,7 +41,7 @@ export default function Home() {
             </h2>
 
             <ScrollArea className="">
-              <div className="w-fit mx-auto 2xl:overflow-y-hidden">
+              <div className="w-fit mx-auto py-2 2xl:overflow-y-hidden">
                 <div className="grid grid-cols-[repeat(10,70px)] grid-rows-2 2xl:grid-rows-1 2xl:grid-cols-20 gap-2 w-fit">
                   {deck.map((card) => (
                     <div
@@ -66,7 +66,7 @@ export default function Home() {
                     .map((_, index) => (
                       <div
                         key={`empty-${index}`}
-                        className="neumorphism relative bg-gray-400 rounded-xs"
+                        className="neumorphism-pressed relative bg-[#e1e0e7] rounded-md w-[70px] h-[98px]"
                       />
                     ))}
                 </div>
