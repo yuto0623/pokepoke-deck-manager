@@ -77,6 +77,25 @@
       "imageUrl": "/imgs/cards/A2b-4.png"
     },
     {
+      "id": "A2b-5",
+      "name": "ニャオハ",
+      "type": "草",
+      "hp": 60,
+      "stage": "0",
+      "ex": false,
+      "attacks": [
+        {
+          "name": "ともだちをよぶ",
+          "cost": ["草"],
+          "damage": 0,
+          "effect": "自分の山札から草ポケモンをランダムに1枚、手札に加える。"
+        }
+      ],
+      "weakness": "炎",
+      "retreat": 1,
+      "imageUrl": "/imgs/cards/A2b-5.png"
+    },
+    {
       "id": "sv1-t01",
       "name": "博士の研究",
       "type": "トレーナーズ",
