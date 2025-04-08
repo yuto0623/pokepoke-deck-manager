@@ -30,7 +30,7 @@ export default function Home() {
     <div className="container mx-auto px-4 py-8">
       <div className="">
         {/* 上側：デッキエリア */}
-        <div className="bg-gray-50 p-4 rounded-lg">
+        <div className="bg-gray-50 p-4 rounded-lg sticky top-0 z-10">
           <div className="mb-4">
             <input
               type="text"
@@ -45,11 +45,11 @@ export default function Home() {
             デッキ（{totalCards}/20枚）
           </h2>
 
-          <div className="space-y-2 mb-4">
+          <div className="flex flex-col flex-wrap gap-4 h-40 overflow-x-scroll">
             {deck.map((card) => (
               <div
                 key={card.id}
-                className="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm"
+                className="h-[40%] flex justify-between items-center bg-white p-3 rounded-lg shadow-sm"
               >
                 <div>
                   <span className="font-medium">{card.name}</span>
