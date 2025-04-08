@@ -6,6 +6,7 @@ import { useCards } from "../hooks/useCards";
 import { useDeck } from "../hooks/useDeck";
 import { Card, CardAction, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const { cards, loading, error } = useCards();
@@ -68,13 +69,12 @@ export default function Home() {
             </div>
 
             <CardAction>
-              <button
+              <Button
                 onClick={saveDeck}
-                className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={totalCards !== 20 || !deckName}
               >
                 デッキを保存
-              </button>
+              </Button>
             </CardAction>
           </CardContent>
         </Card>
@@ -97,7 +97,7 @@ export default function Home() {
               {filteredCards.map((card) => (
                 <Card
                   key={card.id}
-                  className="border rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer"
+                  className="border rounded-lg p-4 transition-shadow cursor-pointer"
                   onClick={() => addCardToDeck(card)}
                 >
                   <h2 className="text-xl font-semibold mb-2">{card.name}</h2>
