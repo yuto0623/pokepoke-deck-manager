@@ -68,10 +68,11 @@ export default function Home() {
               ))}
             </div>
 
-            <CardAction>
+            <CardAction className="w-full flex justify-center mt-5">
               <Button
                 onClick={saveDeck}
                 disabled={totalCards !== 20 || !deckName}
+                className=""
               >
                 デッキを保存
               </Button>
