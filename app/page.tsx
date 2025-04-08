@@ -28,8 +28,6 @@ export default function Home() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">ポケカ デッキビルダー</h1>
-
       <div className="">
         {/* 上側：デッキエリア */}
         <div className="bg-gray-50 p-4 rounded-lg">
