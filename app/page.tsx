@@ -30,42 +30,8 @@ export default function Home() {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">ポケカ デッキビルダー</h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* 左側：カード検索エリア */}
-        <div className="lg:col-span-2">
-          <div className="mb-6">
-            <input
-              type="text"
-              placeholder="カード名で検索..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-            />
-          </div>
-
-          {loading ? (
-            <div>読み込み中...</div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {filteredCards.map((card) => (
-                <div
-                  key={card.id}
-                  className="border rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer"
-                  onClick={() => addCardToDeck(card)}
-                >
-                  <h2 className="text-xl font-semibold mb-2">{card.name}</h2>
-                  <div className="text-gray-600">
-                    <p>タイプ: {card.type}</p>
-                    <p>HP: {card.hp}</p>
-                    <p>ステージ: {card.stage}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* 右側：デッキエリア */}
+      <div className="">
+        {/* 上側：デッキエリア */}
         <div className="bg-gray-50 p-4 rounded-lg">
           <div className="mb-4">
             <input
@@ -108,6 +74,40 @@ export default function Home() {
           >
             デッキを保存
           </button>
+        </div>
+
+        {/* 下側：カード検索エリア */}
+        <div className="lg:col-span-2">
+          <div className="mb-6">
+            <input
+              type="text"
+              placeholder="カード名で検索..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+            />
+          </div>
+
+          {loading ? (
+            <div>読み込み中...</div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {filteredCards.map((card) => (
+                <div
+                  key={card.id}
+                  className="border rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer"
+                  onClick={() => addCardToDeck(card)}
+                >
+                  <h2 className="text-xl font-semibold mb-2">{card.name}</h2>
+                  <div className="text-gray-600">
+                    <p>タイプ: {card.type}</p>
+                    <p>HP: {card.hp}</p>
+                    <p>ステージ: {card.stage}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
