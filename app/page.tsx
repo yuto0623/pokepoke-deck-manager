@@ -7,6 +7,7 @@ import { useDeck } from "../hooks/useDeck";
 import { Card, CardAction, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 export default function Home() {
   const { cards, loading, error } = useCards();
@@ -39,26 +40,29 @@ export default function Home() {
               デッキ（{totalCards}/20枚）
             </h2>
 
-            <div className="flex overflow-x-scroll">
-              {deck.map((card) => (
-                <div
-                  key={card.id}
-                  className="w-20 neumorphism relative"
-                  onClick={() => removeCardFromDeck(card.id)}
-                >
-                  <Image
-                    src={"/imgs/cards/original.png"}
-                    alt={""}
-                    width={315}
-                    height={440}
-                    className="brightness-0"
-                  />
-                  <p className="absolute top-5 left-5 text-white">
-                    {card.name + card.count}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <ScrollArea className="">
+              <div className="flex">
+                {deck.map((card) => (
+                  <div
+                    key={card.id}
+                    className="w-20 neumorphism relative"
+                    onClick={() => removeCardFromDeck(card.id)}
+                  >
+                    <Image
+                      src="/imgs/cards/original.png"
+                      alt={""}
+                      width={315}
+                      height={440}
+                      className="brightness-0"
+                    />
+                    <p className="absolute top-5 left-5 text-white">
+                      {card.name + card.count}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <ScrollBar orientation="horizontal" />
+            </ScrollArea>
 
             <CardAction className="w-full flex justify-center gap-6 mt-5">
               <Input
