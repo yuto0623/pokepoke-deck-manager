@@ -1,0 +1,69 @@
+{
+  "cards": [
+    {
+      "id": "sv1-001",
+      "name": "コライドン",
+      "type": "はがね",
+      "hp": 130,
+      "stage": "基本",
+      "attacks": [
+        {
+          "name": "エネルギーチャージ",
+          "cost": ["無色"],
+          "damage": 0,
+          "effect": "自分のデッキからエネルギーカードを2枚選び、自分のポケモンに好きなように付ける。その後、デッキをシャッフルする。"
+        }
+      ],
+      "weakness": "炎",
+      "resistance": "草",
+      "retreat": 2,
+      "imageUrl": "/images/cards/sv1-001.jpg",
+      "regulation": "E"
+    },
+    {
+      "id": "sv1-002",
+      "name": "ピカチュウ",
+      "type": "雷",
+      "hp": 70,
+      "stage": "基本",
+      "attacks": [
+        {
+          "name": "でんきショック",
+          "cost": ["雷"],
+          "damage": 20,
+          "effect": null
+        }
+      ],
+      "weakness": "闘",
+      "resistance": null,
+      "retreat": 1,
+      "imageUrl": "/images/cards/sv1-002.jpg",
+      "regulation": "E"
+    },
+    {
+      "id": "sv1-003",
+      "name": "リザードン",
+      "type": "炎",
+      "hp": 170,
+      "stage": "2",
+      "attacks": [
+        {
+          "name": "かえんほうしゃ",
+          "cost": ["炎", "炎", "無色"],
+          "damage": 180,
+          "effect": "このポケモンについているエネルギーを1個トラッシュする。"
+        }
+      ],
+      "weakness": "水",
+      "resistance": null,
+      "retreat": 3,
+      "imageUrl": "/images/cards/sv1-003.jpg",
+      "regulation": "E"
+    }
+  ],
+  "metadata": {
+    "totalCards": 3,
+    "lastUpdated": "2025-04-08",
+    "version": "1.0.0"
+  }
+}
