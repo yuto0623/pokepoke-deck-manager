@@ -59,10 +59,126 @@
       "retreat": 3,
       "imageUrl": "/images/cards/sv1-003.jpg",
       "regulation": "E"
+    },
+    {
+      "id": "sv1-004",
+      "name": "ヒトカゲ",
+      "type": "炎",
+      "hp": 70,
+      "stage": "基本",
+      "attacks": [
+        {
+          "name": "ひっかく",
+          "cost": ["無色"],
+          "damage": 10,
+          "effect": null
+        }
+      ],
+      "weakness": "水",
+      "resistance": null,
+      "retreat": 1,
+      "imageUrl": "/images/cards/sv1-004.jpg",
+      "regulation": "E"
+    },
+    {
+      "id": "sv1-005",
+      "name": "リザード",
+      "type": "炎",
+      "hp": 110,
+      "stage": "1",
+      "attacks": [
+        {
+          "name": "かえんぐるま",
+          "cost": ["炎", "無色"],
+          "damage": 60,
+          "effect": null
+        }
+      ],
+      "weakness": "水",
+      "resistance": null,
+      "retreat": 2,
+      "imageUrl": "/images/cards/sv1-005.jpg",
+      "regulation": "E"
+    },
+    {
+      "id": "sv1-006",
+      "name": "ミュウツー",
+      "type": "超",
+      "hp": 180,
+      "stage": "基本",
+      "attacks": [
+        {
+          "name": "サイコブレイク",
+          "cost": ["超", "超", "無色"],
+          "damage": 150,
+          "effect": "相手のバトルポケモンについているエネルギーの数×30ダメージを追加する。"
+        }
+      ],
+      "weakness": "超",
+      "resistance": null,
+      "retreat": 2,
+      "imageUrl": "/images/cards/sv1-006.jpg",
+      "regulation": "E"
+    },
+    {
+      "id": "sv1-t01",
+      "name": "博士の研究",
+      "type": "トレーナーズ",
+      "category": "サポート",
+      "effect": "自分の手札をすべて捨て、山札から6枚引く。",
+      "regulation": "E"
+    },
+    {
+      "id": "sv1-t02",
+      "name": "ボスの指令",
+      "type": "トレーナーズ",
+      "category": "サポート",
+      "effect": "相手のベンチポケモンを1匹選び、バトルポケモンと入れ替える。",
+      "regulation": "E"
+    },
+    {
+      "id": "sv1-t03",
+      "name": "ポケモンいれかえ",
+      "type": "トレーナーズ",
+      "category": "グッズ",
+      "effect": "自分のバトルポケモンを、ベンチポケモン1匹と入れ替える。",
+      "regulation": "E"
+    },
+    {
+      "id": "sv1-e01",
+      "name": "基本炎エネルギー",
+      "type": "エネルギー",
+      "category": "基本",
+      "effect": null,
+      "regulation": "E"
+    },
+    {
+      "id": "sv1-e02",
+      "name": "基本水エネルギー",
+      "type": "エネルギー",
+      "category": "基本",
+      "effect": null,
+      "regulation": "E"
+    },
+    {
+      "id": "sv1-e03",
+      "name": "基本雷エネルギー",
+      "type": "エネルギー",
+      "category": "基本",
+      "effect": null,
+      "regulation": "E"
+    },
+    {
+      "id": "sv1-e04",
+      "name": "基本超エネルギー",
+      "type": "エネルギー",
+      "category": "基本",
+      "effect": null,
+      "regulation": "E"
     }
   ],
   "metadata": {
-    "totalCards": 3,
+    "totalCards": 13,
     "lastUpdated": "2025-04-08",
     "version": "1.0.0"
   }
