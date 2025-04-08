@@ -8,6 +8,7 @@ import { Card, CardAction, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { FaPlus } from "react-icons/fa6";
 
 export default function Home() {
   const { cards, loading, error } = useCards();
@@ -67,7 +68,12 @@ export default function Home() {
                       <div
                         key={`empty-${index}`}
                         className="neumorphism-pressed relative bg-[#e1e0e7] rounded-md w-[70px] h-[98px]"
-                      />
+                      >
+                        <FaPlus
+                          size={30}
+                          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-300"
+                        />
+                      </div>
                     ))}
                 </div>
               </div>
