@@ -104,7 +104,7 @@ export default function Home() {
           <button
             onClick={saveDeck}
             className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled={totalCards !== 60 || !deckName}
+            disabled={totalCards !== 20 || !deckName}
           >
             デッキを保存
           </button>
