@@ -172,6 +172,31 @@
       "imageUrl": "/imgs/cards/A2b-9.png"
     },
     {
+      "id": "A2b-10",
+      "name": "リザードンex",
+      "type": "炎",
+      "hp": 180,
+      "stage": "2",
+      "ex": true,
+      "attacks": [
+        {
+          "name": "もえあがる",
+          "cost": ["炎"],
+          "damage": 0,
+          "effect": "自分のエネルギーゾーンから炎エネルギーを3個出し、このポケモンにつける。"
+        },
+        {
+          "name": "ばくねつほう",
+          "cost": ["炎","炎","炎","無色","無色"],
+          "damage": 150,
+          "effect": ""
+        }
+      ],
+      "weakness": "水",
+      "retreat": 3,
+      "imageUrl": "/imgs/cards/A2b-10.png"
+    },
+    {
       "id": "sv1-t01",
       "name": "博士の研究",
       "type": "トレーナーズ",
