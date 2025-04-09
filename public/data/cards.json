@@ -134,6 +134,25 @@
       "imageUrl": "/imgs/cards/A2b-7.png"
     },
     {
+      "id": "A2b-8",
+      "name": "ヒトカゲ",
+      "type": "炎",
+      "hp": 60,
+      "stage": "0",
+      "ex": false,
+      "attacks": [
+        {
+          "name": "かえん",
+          "cost": ["炎"],
+          "damage": 20,
+          "effect": ""
+        }
+      ],
+      "weakness": "水",
+      "retreat": 1,
+      "imageUrl": "/imgs/cards/A2b-8.png"
+    },
+    {
       "id": "sv1-t01",
       "name": "博士の研究",
       "type": "トレーナーズ",
