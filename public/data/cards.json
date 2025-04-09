@@ -153,6 +153,25 @@
       "imageUrl": "/imgs/cards/A2b-8.png"
     },
     {
+      "id": "A2b-9",
+      "name": "リザード",
+      "type": "炎",
+      "hp": 90,
+      "stage": "1",
+      "ex": false,
+      "attacks": [
+        {
+          "name": "かえん",
+          "cost": ["炎","炎"],
+          "damage": 40,
+          "effect": ""
+        }
+      ],
+      "weakness": "水",
+      "retreat": 2,
+      "imageUrl": "/imgs/cards/A2b-9.png"
+    },
+    {
       "id": "sv1-t01",
       "name": "博士の研究",
       "type": "トレーナーズ",
