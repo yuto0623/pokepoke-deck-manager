@@ -59,9 +59,9 @@ export default function Home() {
                             width={315}
                             height={440}
                           />
-                          <p className="absolute top-5 left-5 text-white">
+                          {/* <p className="absolute top-5 left-5 text-white">
                             {card.name}
-                          </p>
+                          </p> */}
                         </div>
                       ))
                   )}
