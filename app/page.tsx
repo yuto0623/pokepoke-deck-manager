@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { FaPlus } from "react-icons/fa6";
+import { get } from "http";
 
 export default function Home() {
   const { cards, loading, error } = useCards();
@@ -26,6 +27,12 @@ export default function Home() {
   const filteredCards = cards.filter((card) =>
     card.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  // カードがデッキに何枚入っているかを返す関数
+  const getCardCountInDeck = (cardId: string) => {
+    const card = deck.find((c) => c.id === cardId);
+    return card ? card.count : 0;
+  };
 
   if (error) {
     return <div className="text-red-500">エラー: {error}</div>;
@@ -119,7 +126,7 @@ export default function Home() {
               {filteredCards.map((card) => (
                 <Card
                   key={card.id}
-                  className="cursor-pointer p-0 w-full"
+                  className="cursor-pointer p-0 w-full relative"
                   onClick={() => addCardToDeck(card)}
                 >
                   <CardContent className="p-0">
@@ -137,6 +144,11 @@ export default function Home() {
                         height={440}
                         // className="brightness-0"
                       />
+                    )}
+                    {getCardCountInDeck(card.id) > 0 && (
+                      <p className="absolute top-2 right-2 text-white bg-black bg-opacity-50 rounded-full px-2 py-1 text-xs">
+                        {getCardCountInDeck(card.id)}
+                      </p>
                     )}
                   </CardContent>
                 </Card>
