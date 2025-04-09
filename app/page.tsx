@@ -44,25 +44,28 @@ export default function Home() {
             <ScrollArea className="">
               <div className="w-fit mx-auto py-2 2xl:overflow-y-hidden">
                 <div className="grid grid-cols-[repeat(10,70px)] grid-rows-2 2xl:grid-rows-1 2xl:grid-cols-20 gap-2 w-fit">
-                  {deck.map((card) => (
-                    <div
-                      key={card.id}
-                      className="neumorphism relative"
-                      onClick={() => removeCardFromDeck(card.id)}
-                    >
-                      <Image
-                        src={card.imageUrl}
-                        alt={""}
-                        width={315}
-                        height={440}
-                        // className="brightness-0"
-                      />
-                      <p className="absolute top-5 left-5 text-white">
-                        {card.name + card.count}
-                      </p>
-                    </div>
-                  ))}
-                  {Array(20 - deck.length)
+                  {deck.flatMap((card) =>
+                    Array(card.count)
+                      .fill(0)
+                      .map((_, idx) => (
+                        <div
+                          key={`${card.id}-${idx}`}
+                          className="neumorphism relative"
+                          onClick={() => removeCardFromDeck(card.id)}
+                        >
+                          <Image
+                            src={card.imageUrl}
+                            alt={card.name}
+                            width={315}
+                            height={440}
+                          />
+                          <p className="absolute top-5 left-5 text-white">
+                            {card.name}
+                          </p>
+                        </div>
+                      ))
+                  )}
+                  {Array(20 - totalCards)
                     .fill(0)
                     .map((_, index) => (
                       <div
